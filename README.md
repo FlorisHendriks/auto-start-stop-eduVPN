@@ -1,5 +1,5 @@
 # Introduction
-eduVPN is used to provide (large groups of) users a secure way to access their organisational resources. If a user does not have an eduVPN connection established, the user is denied access to that resource.
+[eduVPN](https://www.eduvpn.org) is used to provide (large groups of) users a secure way to access their organisational resources. If a user does not have an eduVPN connection established, the user is denied access to that resource.
 
 In order to establish an eduVPN connection with the default settings, the user has to run the eduVPN client and authenticate (if the previous VPN connection is expired). Sometimes the user tries to access the organisational resources without an established VPN connection. The user is then prompted with a generic error message and is confused why he or she can not access the resource. The user often then contacts the eduVPN support and the support tells the users to establish the VPN connection. These kind of trivial issues can cause unnecessary overhead for the eduVPN support team.  
 
