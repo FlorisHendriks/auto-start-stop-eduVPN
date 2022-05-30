@@ -7,3 +7,5 @@ The Windows eduVPN developer has partially mitigated this limitation by offering
 
 We therefore need to find a way in order to automatically start and stop eduVPN so that we minimalize unnessary overhead for the eduVPN support team and the eduVPN server.
 
+# VPN auto-triggered profile options
+[Windows has multiple ways to automatically establish the VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile)
