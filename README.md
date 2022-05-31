@@ -40,3 +40,5 @@ It can be useful to implement this in eduVPN,
 
 ## Split tunneling
 We can define a lot of triggers (e.g. for a specific application, a set of DNS queries, detect if we are on corporate network) to start and stop eduVPN but we need to write and maintain numerous extra lines of code to implement this functionality. Instead of using triggers to determine when we start or stop the VPN we can take a different path which already is implemented in eduVPN. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
+
+
