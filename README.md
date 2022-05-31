@@ -19,10 +19,9 @@ In order to explore the technical paths to make eduVPN start and stop automatica
 ## VPN auto-triggered options
 [Windows has multiple ways to automatically establish the VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) 
 Based on an event 
-### App trigger
-Microsoft offers the ability to trigger a Windows built-in VPN based on the app that is used. 
+### Application trigger
+Microsoft offers the ability to trigger a Windows built-in VPN based on the application that is used. 
 
-This can be useful to implement in eduVPN if the organisation only uses applications to. However we often see that organisations use 
 
 ### Name-based trigger
 In windows one also has ability to activate a VPN based on specific or all DNS queries.
