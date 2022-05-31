@@ -7,26 +7,29 @@ However, sometimes the user forgets to establish the eduVPN connection and tries
 
 The Windows eduVPN developer has partially mitigated this limitation by offering the option to start the eduVPN client on sign-on. As long as the VPN configuration has not expired, the eduVPN client is able to establish the VPN connection automatically. However, this option is not offered by default. Moreover, if one enables this option for every VPN user the amount of concurrent VPN users can increase tremendously, as the VPN is on most of the time.
 
-We therefore need to find a way in order to automatically start and stop eduVPN so that we minimalize unnecessary overhead for the eduVPN support team and the eduVPN server. 
+It would therefore be useful to find a way in order to automatically start and stop eduVPN so that we minimalize unnecessary overhead for the eduVPN support team and the eduVPN server. This leads to the main reserach question:
 
-In order to explore the technical paths to make eduVPN start and stop automatically, we look at Windows options to automatically trigger   (e.g. [StormShield VPN SSL](https://vpn.stormshield.eu/) and [Pulse Secure](https://www.pulsesecure.net/products/remote-access-overview)). Moreover we are going to look at split tunneling
+**How can we make eduVPN automatically start and stop **
+
+We will limit the scope of our study to eduVPN users with bring your own devices. For managed devices users we can make eduVPN a system VPN 
 
 
-Unfortunately, these solutions are closed source, but by reading their documentation, we can have a rough idea of what kind of methods they support to make their VPN automatically start and stop. We then try to translate these authentication methods within the context of eduVPN.
+# Technical paths
+In order to explore the technical paths to make eduVPN start and stop automatically, we will look at Microsoft's solutions to automatically trigger a VPN connection. Another technical path we are going to explore is split tunneling.
 
-# VPN auto-triggered options
+## VPN auto-triggered options
 [Windows has multiple ways to automatically establish the VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) 
 Based on an event 
-## App trigger
+### App trigger
 We have the ability to trigger the VPN based on an app that is used, 
 
 
-## Name-based trigger
+### Name-based trigger
 DNS resolution, if the user uses an untrusted network connection
 
-## Always On
+### Always On
 
-## Untrusted network
+### Untrusted network
 
 # Split tunneling
 
