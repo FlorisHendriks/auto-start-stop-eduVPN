@@ -7,12 +7,11 @@ However, sometimes the user forgets to establish the eduVPN connection and tries
 
 The Windows eduVPN developer has partially mitigated this limitation by offering the option to start the eduVPN client on sign-on. As long as the VPN configuration has not expired, the eduVPN client is able to establish the VPN connection automatically. However, this option is not offered by default. Moreover, if one enables this option for every VPN user the amount of concurrent VPN users can increase tremendously, as the VPN is on most of the time.
 
-It would therefore be useful to find a way in order to automatically start and stop eduVPN so that we minimalize unnecessary overhead for the eduVPN support team and the eduVPN server. This leads to the main reserach question:
+It would therefore be useful to find a way in order to automatically start and stop eduVPN so that we minimalize unnecessary overhead for the eduVPN support team and the eduVPN server. This leads to the main research question:
 
-**How can we make eduVPN automatically start and stop **
+**How can we make eduVPN automatically start and stop?**
 
-We will limit the scope of our study to eduVPN users with bring your own devices. For managed devices users we can make eduVPN a system VPN 
-
+We will limit the scope of our study to eduVPN users with bring your own devices. [For managed devices users we can make eduVPN a system VPN that is always on.](https://github.com/FlorisHendriks98/eduVPN-provisioning) Users are always connected to the eduVPN and therefore do not request organisation's resources without one.
 
 # Technical paths
 In order to explore the technical paths to make eduVPN start and stop automatically, we will look at Microsoft's solutions to automatically trigger a VPN connection. Another technical path we are going to explore is split tunneling.
@@ -21,15 +20,21 @@ In order to explore the technical paths to make eduVPN start and stop automatica
 [Windows has multiple ways to automatically establish the VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) 
 Based on an event 
 ### App trigger
-We have the ability to trigger the VPN based on an app that is used, 
+Microsoft offers the ability to trigger a Windows built-in VPN based on the app that is used. 
+
+This is not really useful to specify in eduVPN, the 
 
 
 ### Name-based trigger
-DNS resolution, if the user uses an untrusted network connection
+In windows one also has ability to activate a VPN based on specific or all DNS queries.
 
 ### Always On
+Windows has the ability to enable the VPN when the user signs in, when there is a network change and when the device screen is on. 
 
+eduVPN already has the ability to start on sign-on. One can also extend this functionality for network changes and when the device screen is on.
 ### Untrusted network
 
-# Split tunneling
 
+
+## Split tunneling
+Instead of using triggers to determine when we start or stop the VPN we can take a different path. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
