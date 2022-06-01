@@ -17,10 +17,13 @@ We will limit the scope of our study to eduVPN users that have bring your own de
 In order to explore the technical paths to make eduVPN start and stop automatically, we will look at Windows' built-in VPN documentation to identify how it automatically triggers a VPN connection. Another technical path we are going to explore is split tunneling.
 
 ## VPN auto-triggered options
-[Windows has multiple ways to automatically establish the VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) 
-Based on an event 
+Windows has the possibility to built-in a VPN. It has support for VPN protocols such as IKEv2 and SSTP. However, eduVPN only supports WireGuard and OpenVPN so it can not integrate with Windows built-in VPN functionality.
+[Intrestingly, Windows has multiple ways to automatically start and stop a VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile)
+Windows gives one the ability to define triggers, events that determine whether or not a VPN connection should be established.
 ### Application trigger
-Microsoft offers the ability to trigger a Windows built-in VPN based on the application that is used. 
+Microsoft offers the ability to trigger a Windows built-in VPN based on the application that is used.
+
+We can take 
 
 
 ### Name-based trigger
@@ -39,6 +42,8 @@ Lastly, the Windows built-in VPN can detect if the network is trusted or not. Wi
 It can be useful to implement this in eduVPN, 
 
 ## Split tunneling
-We can define a lot of triggers (e.g. for a specific application, a set of DNS queries, detect if we are on corporate network) to start and stop eduVPN but we also need to have eduVPN always on when we are on a public network. Instead of using triggers to determine when we start or stop the VPN we can take a different path which already is implemented in eduVPN. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
+We can define a lot of triggers (e.g. for a specific application, a set of DNS queries, detect if we are on corporate network) to start and stop eduVPN. But in order to realize this we need to monitor quite a lot from the client computer. We wonder if this is feasible and if virus scanners will not obstruct this implementation. Instead of using triggers to determine when we start or stop the VPN we can take a different technical path. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
+
+Using eduVPN's sign-on functionality we can have eduVPN always-on for a large portion of the time. Whenever the user is on a password protected network we will only route traffic for organisational resources over the VPN. All other traffic will be routed over the regular interface in order to alleviate the resources of the eduVPN server. However, if the user is on a public network we will route all the traffic over the VPN as otherwise all traffic can be easily intercepted.
 
 
