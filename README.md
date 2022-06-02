@@ -46,4 +46,6 @@ We can define a lot of triggers (e.g. for a specific application, a set of DNS q
 
 Using eduVPN's sign-on functionality we can have eduVPN always-on for a large portion of the time. Whenever the user is on a password protected network we will only route traffic for organisational resources over the VPN. All other traffic will be routed over the regular interface in order to alleviate the resources of the eduVPN server. However, if the user is on a public network we will route all the traffic over the VPN as otherwise all traffic can be easily eavesdropped.
 
+We are going to determine whether the user is on a public network or not by looking at the wlan interface that is currently used. If the wlan interface is authenticated by ... we know that the user is on a public network. We then retrieve a configuration where we route all traffic over the VPN. If the wlan is authenticated with a different protocol we will retrieve a configuration where we partially rout traffic over the VPN.
 
+If the user switches network we also need to check if the user switches to a public network. We therefore listen to event id 10000. Event id 1000 is created by Windows whenever we connect to a different network.
