@@ -22,14 +22,10 @@ Windows has the possibility to built-in a VPN. It has support for VPN protocols 
 Windows gives one the ability to define triggers, events that determine whether or not a VPN connection should be established.
 ### Application trigger
 Microsoft offers the ability to trigger a Windows built-in VPN based on the application that is used.
-
-We can take 
-
-
 ### Name-based trigger
 In windows one also has ability to activate a VPN based on specific or all DNS queries.
 
-This can be useful to implement in eduVPN
+This can be useful to implement in eduVPN. Instead of routing network packets via a specific ip adress it can be handy to do it via DNS as it can handle IP changes. 
 
 ### Always On
 Windows has the ability to enable the VPN when the user signs in, when there is a network change and when the device screen is on. 
@@ -38,8 +34,6 @@ eduVPN already has the ability to start on sign-on. One can also extend this fun
 
 ### Untrusted network
 Lastly, the Windows built-in VPN can detect if the network is trusted or not. Windows retrieves a list of DNS suffixes and checks if it matches the network name of the physical interface connection profile.
-
-It can be useful to implement this in eduVPN, 
 
 ## Split tunneling
 We can define a lot of triggers (e.g. for a specific application, a set of DNS queries, detect if we are on corporate network) to start and stop eduVPN. But in order to realize this we need to monitor quite a lot from the client computer. We wonder if this is feasible and if virus scanners will not obstruct this implementation. Instead of using triggers to determine when we start or stop the VPN we can take a different technical path. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
