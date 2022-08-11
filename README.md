@@ -11,7 +11,7 @@ It would therefore be useful to find a way in order to automatically start and s
 
 **How can we make eduVPN automatically start and stop?**
 
-We will limit the scope of our study to eduVPN users that have bring your own devices. [For managed devices users we can make eduVPN a system VPN that is always on.](https://github.com/FlorisHendriks98/eduVPN-provisioning) Users are always connected to the eduVPN and therefore do not request organisation's resources without one.
+We will limit the scope of our study to eduVPN users that have bring your own devices. [For managed devices users we can make eduVPN a system VPN that is always on.](https://github.com/FlorisHendriks98/HTTP_bulk_provisioning) Users are always connected to the eduVPN and therefore do not request organisation's resources without one.
 
 # Technical paths
 In order to explore the technical paths to make eduVPN start and stop automatically, we will look at Windows' built-in VPN documentation to identify how it automatically triggers a VPN connection. Another technical path we are going to explore is split tunneling.
