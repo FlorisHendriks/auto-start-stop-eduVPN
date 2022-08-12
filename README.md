@@ -16,10 +16,9 @@ We will limit the scope of our study to eduVPN users that have bring your own de
 
 # Technical paths
 
-In order to explore the technical paths to make eduVPN start and stop automatically, we will first take a look at other vpn solutions. We found out that NordVPN has such [functionality](https://nordvpn.com/blog/automatic-vpn-wifi-connect/). The app has the option to initiate a VPN connection either only on secured networks, only on wifi-networks or always. Unfortunately we can not take a detailed look at how they have implemented this as it is closed source. However, we can take an educated guess. NordVPN uses the IKEv2/IPsec and OpenVPN protocols. 
+In order to explore the technical paths to make eduVPN start and stop automatically, we will first take a look at other vpn solutions. We found out that NordVPN has such [functionality](https://nordvpn.com/blog/automatic-vpn-wifi-connect/). The app has the option to initiate a VPN connection either only on secured networks, only on wifi-networks or always. Unfortunately we can not take a detailed look at how they have implemented this as it is closed source.
 
-we will look at Windows' built-in VPN documentation to identify how it automatically triggers a VPN connection. Another technical path we are going to explore is split tunneling.
-
+Windows' built-in VPN documentation does show how it can automatically trigger a VPN connection.
 ## VPN auto-triggered options
 Windows has the possibility to built-in a VPN. It has support for VPN protocols such as IKEv2 and SSTP. However, eduVPN only supports WireGuard and OpenVPN so it can not integrate with Windows built-in VPN functionality.
 [Intrestingly, Windows has multiple ways to automatically start and stop a VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile)
