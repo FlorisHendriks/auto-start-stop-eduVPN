@@ -16,7 +16,9 @@ We will limit the scope of our study to eduVPN users that have bring your own de
 
 # Technical paths
 
-In order to explore the technical paths to make eduVPN start and stop automatically, we will first take a look at other vpn solutions. We found out that NordVPN has such [functionality](https://nordvpn.com/blog/automatic-vpn-wifi-connect/). The app has the option to initiate a VPN connection either only on secured networks, only on wifi-networks or always. Unfortunately we can not take a detailed look at how they have implemented this as it is closed source.
+In order to explore the technical paths to make eduVPN start and stop automatically, we will first take a look at other vpn solutions. When searching for OpenVPN or WireGuard client implementations we did not find any [auto start / stop solutions](https://forums.openvpn.net/viewtopic.php?t=32426).
+
+We did find out that NordVPN has such [functionality](https://nordvpn.com/blog/automatic-vpn-wifi-connect/). The app has the option to initiate a VPN connection either only on secured networks, only on wifi-networks or always. Unfortunately we can not take a detailed look at how they have implemented this as it is closed source.
 
 Windows' built-in VPN documentation does show how it can automatically trigger a VPN connection.
 ## VPN auto-triggered options
