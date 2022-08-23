@@ -23,10 +23,9 @@ We did find out that the WireGuard macOS client has partially such functionality
 
 OpenVPN also has such functionality for macOS but unfortunately does not support it natively. Someone made a [Github project](https://github.com/iphoting/ovpnmcgen.rb) that generates a .mobileconfig file which is able to set up or tear down an openvpn connection for a specific SSID. 
 
-![image](https://user-images.githubusercontent.com/47246332/184669417-5c226550-e845-4ae3-8cef-af6ade46442a.png)
+Something that is quite remarkable is that both WireGuard and OpenVPN do not have this feature implemented in their Windows clients.
 
-
-Windows' built-in VPN documentation does show how it can automatically trigger a VPN connection.
+[Microsoft did write documentation about this feature.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) It shows how we can automatically trigger a VPN connection for built-in VPNs. However, we can not use this since it does not support WireGuard and OpenVPN.
 ## VPN auto-triggered options
 Windows has the possibility to built-in a VPN. It has support for VPN protocols such as IKEv2 and SSTP. However, eduVPN only supports WireGuard and OpenVPN so it can not integrate with Windows built-in VPN functionality.
 [Intrestingly, Windows has multiple ways to automatically start and stop a VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile)
