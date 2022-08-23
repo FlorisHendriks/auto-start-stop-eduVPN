@@ -18,7 +18,12 @@ We will limit the scope of our study to eduVPN users that have bring your own de
 
 In order to explore the technical paths to make eduVPN start and stop automatically, we will first take a look at other vpn solutions. When searching for OpenVPN or WireGuard client implementations we did not find any [auto start / stop solutions](https://forums.openvpn.net/viewtopic.php?t=32426).
 
-We did find out that NordVPN has such [functionality](https://nordvpn.com/blog/automatic-vpn-wifi-connect/). The app has the option to initiate a VPN connection either only on secured networks, only on wifi-networks or always. Unfortunately we can not take a detailed look at how they have implemented this as it is closed source. Our guess is that NordVPN installs a service on the client's computer that listens for event id 10000. Event id 10000 is a Windows log that gets logged whenever a user connects to a network. If the user sets the option to intiate a VPN connection for example to only on secured networks then the service also checks if the network is in the public category. 
+We did find out that the WireGuard macOS client has partially such functionality using a feature from the [network extension framework](https://developer.apple.com/documentation/networkextension/personal_vpn/vpn_on_demand_rules). The WireGuard client is able to establish a VPN connection when we connect to any network, or define a list of ssid's (see the Figure below). 
+
+![image](https://user-images.githubusercontent.com/47246332/186174481-f9e43754-df10-422f-aba4-9c8083e55ccd.png)
+
+
+connect when NordVPN has such [functionality](https://nordvpn.com/blog/automatic-vpn-wifi-connect/). The app has the option to initiate a VPN connection either only on secured networks, only on wifi-networks or always. Unfortunately we can not take a detailed look at how they have implemented this as it is closed source. Our guess is that NordVPN installs a service on the client's computer that listens for event id 10000. Event id 10000 is a Windows log that gets logged whenever a user connects to a network. If the user sets the option to intiate a VPN connection for example to only on secured networks then the service also checks if the network is in the public category. 
 
 ![image](https://user-images.githubusercontent.com/47246332/184669417-5c226550-e845-4ae3-8cef-af6ade46442a.png)
 
