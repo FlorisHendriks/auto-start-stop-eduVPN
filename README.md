@@ -44,7 +44,7 @@ Lastly, the Windows built-in VPN can detect if the network is trusted or not. Wi
 
 ---
 
-We can replicate this feature on Windows by monitoring events from event viewer. As an example, lets try to replicate the application trigger. The event id for starting [an application is 4688](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4688). First edit your group policy to [log these events](https://superuser.com/questions/1052541/how-can-i-get-a-history-of-running-processes). Then at Event Viewer > Windows Logs > Security it will contains logs of processes you created. So if I, for example, started Signal the following event will be created:
+We can replicate this feature on Windows by monitoring events from event viewer. As an example, lets try to replicate the application trigger. The event id for starting [an application is 4688](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4688). First edit your group policy to [log these events](https://superuser.com/questions/1052541/how-can-i-get-a-history-of-running-processes). Then at Event Viewer > Windows Logs > Security it will contains logs of processes you created. So if we, for example, started Signal the following event will be created:
 ![image](https://user-images.githubusercontent.com/47246332/186235863-2445c46f-f2c8-4a5d-842a-941345c26873.png)
 
 
