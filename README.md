@@ -41,6 +41,7 @@ eduVPN already has the ability to start on sign-on. One can also extend this fun
 
 ### Untrusted network
 Lastly, the Windows built-in VPN can detect if the network is trusted or not. Windows retrieves a list of DNS suffixes and checks if it matches the network name of the physical interface connection profile.
+
 ---
 
 
