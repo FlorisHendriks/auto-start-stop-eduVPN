@@ -44,7 +44,7 @@ Lastly, the Windows built-in VPN can detect if the network is trusted or not. Wi
 
 ---
 
-We can replicate this feature on Windows by monitoring events from event viewer. As an example, lets try to replicate the application trigger. The event id for starting [an application is 4668](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4668).
+We can replicate this feature on Windows by monitoring events from event viewer. As an example, lets try to replicate the application trigger. The event id for starting [an application is 4688](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4688). First edit your group policy to [log these events](https://superuser.com/questions/1052541/how-can-i-get-a-history-of-running-processes). Then at event viewer > Windows Logs > Security it will log all processes you create.
 
 ## Split tunneling
 We can define a lot of triggers (e.g. for a specific application, a set of DNS queries, detect if we are on corporate network) to start and stop eduVPN. But in order to realize this we need to monitor quite a lot from the client computer. We wonder if this is feasible and if virus scanners will not obstruct this implementation. Instead of using triggers to determine when we start or stop the VPN we can take a different technical path. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
