@@ -25,11 +25,8 @@ OpenVPN also has such functionality for macOS but unfortunately does not support
 
 Something that is quite remarkable is that both WireGuard and OpenVPN do not have this feature implemented in their Windows clients.
 
-[Microsoft did write documentation about this feature.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) It shows how we can automatically trigger a VPN connection for built-in VPNs. However, we can not use this since it does not support WireGuard and OpenVPN.
+[Microsoft did write documentation about this feature.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile) It shows how we can automatically trigger a VPN connection for built-in VPNs. However, we can not use this since it does not support WireGuard and OpenVPN. Windows defines the following triggers:
 ## VPN auto-triggered options
-Windows has the possibility to built-in a VPN. It has support for VPN protocols such as IKEv2 and SSTP. However, eduVPN only supports WireGuard and OpenVPN so it can not integrate with Windows built-in VPN functionality.
-[Intrestingly, Windows has multiple ways to automatically start and stop a VPN connection.](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-auto-trigger-profile)
-Windows gives one the ability to define triggers, events that determine whether or not a VPN connection should be established.
 ### Application trigger
 Microsoft offers the ability to trigger a Windows built-in VPN based on the application that is used.
 ### Name-based trigger
@@ -44,6 +41,8 @@ eduVPN already has the ability to start on sign-on. One can also extend this fun
 
 ### Untrusted network
 Lastly, the Windows built-in VPN can detect if the network is trusted or not. Windows retrieves a list of DNS suffixes and checks if it matches the network name of the physical interface connection profile.
+---
+
 
 ## Split tunneling
 We can define a lot of triggers (e.g. for a specific application, a set of DNS queries, detect if we are on corporate network) to start and stop eduVPN. But in order to realize this we need to monitor quite a lot from the client computer. We wonder if this is feasible and if virus scanners will not obstruct this implementation. Instead of using triggers to determine when we start or stop the VPN we can take a different technical path. Using split tunneling, we can specify what network traffic goes via the VPN tunnel and what traffic does not.
