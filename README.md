@@ -46,6 +46,9 @@ Lastly, the Windows built-in VPN can detect if the network is trusted or not. Wi
 ## Monitoring events
 We can replicate this feature on Windows by monitoring events from event viewer. We can for example create a service that monitors for event id 10000. Event id 10000 is logged whenever you connect to a network. If the network SSID matches a predefined list it will start the VPN. It is more difficult to use this for DNS queries and applications as those are not logged by default, [you need to edit group policy for that](https://superuser.com/questions/1052541/how-can-i-get-a-history-of-running-processes). 
 
+![image](https://user-images.githubusercontent.com/47246332/190123129-0973b4e0-3a0b-4cc9-97d6-3fe18d918235.png)
+
+
 ## Network packet filter
 During our research we discovered an extended WireGuard client called [WireSock](wiresock.net). One of the extended features it has compared to the regular WireGuard client is that it can tunnel network traffic only for specified applications (e.g. Firefox, Signal etc). They likely have realised this with [ndisapi](https://github.com/wiresock/ndisapi), a Windows Packet Filter. Maybe we can use this to monitor for specific DNS queries.
 
