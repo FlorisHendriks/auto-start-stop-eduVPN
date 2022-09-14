@@ -15,9 +15,7 @@ We will limit the scope of our study to eduVPN users that have bring your own de
 
 # Technical paths
 
-In order to explore the technical paths to make eduVPN start and stop automatically, we will first take a look at other vpn solutions. When searching for OpenVPN or WireGuard client implementations we did not find any [auto start / stop solutions](https://forums.openvpn.net/viewtopic.php?t=32426).
-
-We did find out that the WireGuard macOS client has partially such functionality using a feature from the [network extension framework](https://developer.apple.com/documentation/networkextension/personal_vpn/vpn_on_demand_rules). The WireGuard client is able to establish a VPN connection when we connect to any network, or define a list of ssid's (see the Figure below). 
+We find out that the WireGuard macOS client partially has auto stop / start functionality using a feature from the [network extension framework](https://developer.apple.com/documentation/networkextension/personal_vpn/vpn_on_demand_rules). The WireGuard client is able to establish a VPN connection when we connect to any network, or define a list of ssid's (see the Figure below). 
 
 ![image](https://user-images.githubusercontent.com/47246332/186175859-df8a74dd-7629-48e2-b080-cfa58ad26636.png)
 
