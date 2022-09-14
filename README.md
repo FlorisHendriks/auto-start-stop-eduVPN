@@ -44,7 +44,7 @@ Lastly, the Windows built-in VPN can detect if the network is trusted or not. Wi
 
 
 ## Monitoring events
-We can replicate this feature on Windows by monitoring events from event viewer. We can for example create a service that monitors for event id 10000. Event id 10000 is logged whenever you connect to a network. If the network SSID matches a predefined list it will start the VPN. It is more difficult to use this for DNS queries and applications as those are not logged by default, [you need to edit group policy for that](https://superuser.com/questions/1052541/how-can-i-get-a-history-of-running-processes). In the figure below we made a custom XML file that triggers eduvpn.exe whenever signal is started. 
+We can replicate this feature on Windows by monitoring events from event viewer. We can for example create a service that monitors for event id 10000. Event id 10000 is logged whenever you connect to a network. If the network SSID matches a predefined list it will start the VPN. It is more difficult to use this for DNS queries and applications as those are not logged by default, [you need to edit group policy for that](https://superuser.com/questions/1052541/how-can-i-get-a-history-of-running-processes). As an example, in the figure below we made a custom XML file that triggers eduvpn.exe whenever Signal is started. 
 
 ![image](https://user-images.githubusercontent.com/47246332/190123129-0973b4e0-3a0b-4cc9-97d6-3fe18d918235.png)
 
